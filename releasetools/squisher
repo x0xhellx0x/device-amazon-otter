@@ -35,7 +35,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/cm/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/aokp/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
@@ -94,10 +94,6 @@ mv $REPACK/ota/system/vendor/lib/hw/hwcomposer.omap4.so $REPACK/ota/system/vendo
 mv $REPACK/ota/system/lib/hw/hwcomposer.default.so $REPACK/ota/system/vendor/lib/hw/hwcomposer.omap4.so
 mv $REPACK/ota/system/lib/hw/camera.omap4.so $REPACK/ota/system/lib/hw/camera.omap4.so.bak
 
-# Remove unwanted apps
-rm $REPACK/ota/system/app/Camera.apk
-rm $REPACK/ota/system/app/Music.apk
-
 if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	squash_opts="-force-uid 1000 -force-gid 1000 -no-progress -noappend -no-exports -no-recovery"
 	updater=$REPACK/ota/META-INF/com/google/android/updater-script
@@ -148,13 +144,11 @@ rm -rf $REPACK/ota/recovery
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Determine what to name the new signed package
-if [ -z "$CYANOGEN_NIGHTLY" ]; then
-	MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $REPACK/ota/system/build.prop`
-	: ${MODVERSION:=nightly}
-	OUTFILE=$OUT/cm9-kfire-hashcode.zip
-else
-	OUTFILE=$OUT/update-squished.zip
-fi
+
+#MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
+VERSION=`cat "vendor/aokp/configs/common_versions.mk" | grep CURRENT_VERSION | head -1 | cut -f2 -d '=' | cut -f3 -d '_'`
+MODVERSION="$TARGET_PRODUCT"_"$VERSION"
+OUTFILE=$OUT/$MODVERSION.zip
 
 # Pack it up and sign
 printf "Zipping package..."
