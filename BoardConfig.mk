@@ -56,6 +56,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1192230912
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_VOLD_MAX_PARTITIONS := 32
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file"
 
 # Connectivity - Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -89,6 +90,7 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/amazon/otter/recovery-kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_ALWAYS_INSECURE := true
 BOARD_HAS_LARGE_FILESYSTEM := true
+BOARD_UMS_LUNFILE := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file"
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_UI_LIB := librecovery_ui_otter
 
