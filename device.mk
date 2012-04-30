@@ -145,6 +145,7 @@ PRODUCT_COPY_FILES += \
 # Prebuilt /system/lib
 PRODUCT_COPY_FILES += \
     device/amazon/otter/prebuilt/lib/sensors.otter.so:/system/lib/hw/sensors.otter.so \
+    device/amazon/otter/prebuilt/lib/libidme.so:/system/lib/libidme.so \
 
 
 # Graphics
