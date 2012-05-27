@@ -1,1 +1,1 @@
-add_lunch_combo cyanogen_blaze-eng
+add_lunch_combo cyanogen_otter-eng

@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/amazon/blaze/BoardConfigVendor.mk
+-include vendor/amazon/otter/BoardConfigVendor.mk
 
 USE_CAMERA_STUB := true
 BOARD_USES_GENERIC_AUDIO := false
@@ -22,14 +22,14 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Graphics
-BOARD_EGL_CFG := device/amazon/blaze/misc/egl.cfg
+BOARD_EGL_CFG := device/amazon/otter/misc/egl.cfg
 
 # HW Graphics
 USE_OPENGL_RENDERER := true
 
 #TARGET_PROVIDES_RELEASETOOLS := true
-#TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/amazon/blaze/releasetools/encore_img_from_target_files
-#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/amazon/blaze/releasetools/encore_ota_from_target_files
+#TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/amazon/otter/releasetools/encore_img_from_target_files
+#TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/amazon/otter/releasetools/encore_ota_from_target_files
 TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_HAVE_BLUETOOTH := true
@@ -89,8 +89,8 @@ endif
 # XXX: CHANGED FROM TRUE
 BOARD_USES_TI_CAMERA_HAL := false
 
-TARGET_PREBUILT_KERNEL := device/amazon/blaze/kernel
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/amazon/blaze/recovery/recovery_ui.c
+TARGET_PREBUILT_KERNEL := device/amazon/otter/kernel
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/amazon/otter/recovery/recovery_ui.c
 
 # Do da wifi
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM

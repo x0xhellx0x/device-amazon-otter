@@ -1,24 +1,24 @@
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/amazon/blaze/blaze-vendor.mk)
+$(call inherit-product-if-exists, vendor/amazon/otter/otter-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/amazon/blaze/overlay
+DEVICE_PACKAGE_OVERLAYS += device/amazon/otter/overlay
 
 # Copy over the custom reboot scripts and their binary counterparts for recovery (courtesy of DoomLoRD)
 PRODUCT_COPY_FILES += \
-    device/amazon/blaze/recovery/root/sbin/fbmode:recovery/root/sbin/fbmode \
-    device/amazon/blaze/recovery/root/sbin/nbmode:recovery/root/sbin/nbmode \
-    device/amazon/blaze/recovery/root/sbin/rcmode:recovery/root/sbin/rcmode \
-    device/amazon/blaze/recovery/root/sbin/reboot_fastboot:recovery/root/sbin/reboot_fastboot \
-    device/amazon/blaze/recovery/root/sbin/reboot_recovery:recovery/root/sbin/reboot_recovery \
-    device/amazon/blaze/recovery/root/sbin/reboot_system:recovery/root/sbin/reboot_system
+    device/amazon/otter/recovery/root/sbin/fbmode:recovery/root/sbin/fbmode \
+    device/amazon/otter/recovery/root/sbin/nbmode:recovery/root/sbin/nbmode \
+    device/amazon/otter/recovery/root/sbin/rcmode:recovery/root/sbin/rcmode \
+    device/amazon/otter/recovery/root/sbin/reboot_fastboot:recovery/root/sbin/reboot_fastboot \
+    device/amazon/otter/recovery/root/sbin/reboot_recovery:recovery/root/sbin/reboot_recovery \
+    device/amazon/otter/recovery/root/sbin/reboot_system:recovery/root/sbin/reboot_system
 
 PRODUCT_COPY_FILES += \
-    device/amazon/blaze/root/init.rc:root/init.rc \
-    device/amazon/blaze/root/init.omap4430.rc:root/init.omap4430.rc \
-    device/amazon/blaze/root/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
-    device/amazon/blaze/root/ueventd.rc:root/ueventd.rc \
+    device/amazon/otter/root/init.rc:root/init.rc \
+    device/amazon/otter/root/init.omap4430.rc:root/init.omap4430.rc \
+    device/amazon/otter/root/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
+    device/amazon/otter/root/ueventd.rc:root/ueventd.rc \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/misc/vold.fstab:system/etc/vold.fstab \
@@ -64,7 +64,7 @@ PRODUCT_PACKAGES += \
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/amazon/blaze/kernel
+	LOCAL_KERNEL := device/amazon/otter/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -90,5 +90,5 @@ $(call inherit-product, build/target/product/less_full_base.mk)
 PRODUCT_LOCALES += mdpi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_blaze
-PRODUCT_DEVICE := blaze
+PRODUCT_NAME := full_otter
+PRODUCT_DEVICE := otter
