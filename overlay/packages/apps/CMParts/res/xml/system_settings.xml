@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- General settings -->
+    <PreferenceCategory android:key="general_category"
+        android:title="@string/general_title">
+
+        <!-- CMStats -->
+             <!-- This is a non-CM supported build so we have removed cmstats -->
+
+        <!-- Update Notifications -->
+             <!-- Removed notifications for the same reason listed above -->
+
+        <!-- Change Log -->
+        <PreferenceScreen android:key="changelog"
+            android:title="@string/changelog_title">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.cmparts"
+                android:targetClass="com.cyanogenmod.cmparts.activities.ChangeLog" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
