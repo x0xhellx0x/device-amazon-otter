@@ -74,14 +74,35 @@ PRODUCT_COPY_FILES += \
 
 # Set property overrides
 PRODUCT_PROPERTY_OVERRIDES += \
+com.ti.omap_enhancement=true \
+opencore.asmd=1 \
+keyguard.no_require_sim=1 \
+wifi.interface=tiwlan0 \
+wifi.supplicant_scan_interval = 90 \
+dalvik.vm.heapsize=64m \
+ro.sf.lcd_density=160 \
+ro.opengles.version=131072 \
+ro.radio.use-ppp no \
+ro.config.nocheckin yes \
+omap.audio.mic.main=AMic0 \
+omap.audio.mic.sub=AMic1 \
+omap.audio.power=PingPong \
+af.resampler.quality=2 \
+persist.lab126.chargeprotect=1 \
 keyguard.no_require_sim=true \
 ro.com.android.dateformat=MM-dd-yyyy \
 ro.com.android.dataroaming=true \
 ro.ril.hsxpa=1 \
 ro.ril.gprsclass=10 \
-ro.config.notification_sound=ro.config.alarm_alert=Alarm_Classic.ogg \
+ro.config.notification_sound=OnTheHunt.ogg
+ro.config.alarm_alert=Alarm_Classic.ogg \
 net.bt.name=Android \
-dalvik.vm.stack-trace-file=/data/anr/traces.txt
+dalvik.vm.stack-trace-file=/data/anr/traces.txt \
+debug.sf.hw=1 \
+video.accelerate.hw=1 \
+ro.sf.hwrotation=270 \
+ro.ril.disable.power.collapse=1 \
+pm.sleep_mode=2
 
 $(call inherit-product, build/target/product/full_base.mk)
 
