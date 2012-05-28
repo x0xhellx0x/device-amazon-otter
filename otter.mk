@@ -81,10 +81,9 @@ ro.ril.hsxpa=1 \
 ro.ril.gprsclass=10 \
 ro.config.notification_sound=ro.config.alarm_alert=Alarm_Classic.ogg \
 net.bt.name=Android \
-dalvik.vm.stack-trace-file=/data/anr/traces.txt \
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
 
-# Use added less_full_base.mk to remove unwanted apps
-$(call inherit-product, build/target/product/less_full_base.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 # Set mdpi locale after inheritting base.mk (corrects default language loading as MD)
 PRODUCT_LOCALES += mdpi
