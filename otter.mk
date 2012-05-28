@@ -5,7 +5,10 @@ $(call inherit-product-if-exists, vendor/amazon/otter/otter-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/amazon/otter/overlay
 
-# Copy over the custom reboot scripts and their binary counterparts for recovery (courtesy of DoomLoRD)
+# Copy over the custom reboot scripts and their binary counterparts for
+# recovery (courtesy of DoomLoRD), the new fff and postmode changes to
+# the board config should make these unncessary but I want to keep them
+# for now for compat with FFFe (for dualboot).
 PRODUCT_COPY_FILES += \
     device/amazon/otter/recovery/root/sbin/fbmode:recovery/root/sbin/fbmode \
     device/amazon/otter/recovery/root/sbin/nbmode:recovery/root/sbin/nbmode \
@@ -18,7 +21,7 @@ PRODUCT_COPY_FILES += \
     device/amazon/otter/root/init.rc:root/init.rc \
     device/amazon/otter/root/init.omap4430.rc:root/init.omap4430.rc \
     device/amazon/otter/root/ueventd.omap4430.rc:root/ueventd.omap4430.rc \
-    device/amazon/otter/root/ueventd.rc:root/ueventd.rc \
+    device/amazon/otter/root/ueventd.rc:root/ueventd.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/misc/vold.fstab:system/etc/vold.fstab \
@@ -60,8 +63,6 @@ PRODUCT_PACKAGES += \
     libLCML \
     libVendor_ti_omx \
     Usb
-
-
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/amazon/otter/kernel

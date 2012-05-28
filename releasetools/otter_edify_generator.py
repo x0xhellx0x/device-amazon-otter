@@ -15,7 +15,7 @@
 import os
 import re
 
-import common
+import otter_common as common
 
 class EdifyGenerator(object):
   """Class to generate scripts in the 'edify' recovery script language
@@ -91,7 +91,7 @@ class EdifyGenerator(object):
            ' || \0'.join(['getprop("ro.product.device") == "%s" || getprop("ro.build.product") == "%s" || getprop("ro.product.board") == "%s"'
                          % (i, i, i) for i in device.split(",")]) + 
            ');')
-    self.script.append(self._WordWrap(cmd))
+#    self.script.append(self._WordWrap(cmd))
 
   def AssertSomeBootloader(self, *bootloaders):
     """Asert that the bootloader version is one of *bootloaders."""

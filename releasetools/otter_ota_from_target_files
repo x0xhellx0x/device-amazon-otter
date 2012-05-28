@@ -69,8 +69,8 @@ import tempfile
 import time
 import zipfile
 
-import common
-import edify_generator
+import otter_common as common
+import otter_edify_generator as edify_generator
 
 OPTIONS = common.OPTIONS
 OPTIONS.package_key = "build/target/product/security/testkey"
@@ -388,8 +388,6 @@ def WriteFullOTAPackage(input_zip, output_zip):
     script.FormatPartition("/data")
 
   script.FormatPartition("/system")
-  script.FormatPartition("/data")
-  script.FormatPartition("/cache")
   script.Mount("/system")
   script.UnpackPackageDir("system", "/system")
 
