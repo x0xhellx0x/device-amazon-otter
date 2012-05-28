@@ -83,3 +83,8 @@
 
 ### 05/03/2012
 * Added support for bootmode override of FFF 1.4 (this in conjunction w/ FFF 1.4 fully deprecates the TWRP {no recovery reboot option} branch).
+
+### 05/25/2012
+* Convert blaze to otter.
+* General code and build cleanup.
+* Updated readme, woo we have a wiki!
