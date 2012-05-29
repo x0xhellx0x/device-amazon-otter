@@ -14,8 +14,8 @@
 ### Download sources
 
 ```bash
-mkdir cm9
-cd cm9/
+mkdir cm7
+cd cm7/
 curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/repo
 chmod a+x ~/repo
 repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
