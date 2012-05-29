@@ -1,0 +1,22 @@
+# This overrides settings in the products/generic/system.prop file
+#
+# rild.libpath=/system/lib/libreference-ril.so
+# rild.libargs=-d /dev/ttyS0
+com.ti.omap_enhancement=true
+opencore.asmd=1
+
+# Define modem related settings
+ro.radio.use-ppp no
+ro.config.nocheckin yes
+
+# Define defaults for audio D/A mic and power mode
+omap.audio.mic.main=AMic0
+omap.audio.mic.sub=AMic1
+omap.audio.power=PingPong
+
+# Upgrading the resampler quality
+af.resampler.quality=2
+
+# And a few tweaks to get hardware acceleration going and setting up the rotation correctly
+debug.sf.hw=1 
+video.accelerate.hw=1 
