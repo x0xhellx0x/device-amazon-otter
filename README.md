@@ -21,7 +21,7 @@ chmod a+x ~/repo
 repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
 wget -O .repo/local_manifest.xml https://raw.github.com/KFire-Android/android_local_manifest/gingerbread/local_manifest.xml 
 repo sync -j16
-./vendor/amazon/otter/setup_vendor.sh
+./vendor/amazon/otter/setup_vendor
 ```
 
 ### Compile
