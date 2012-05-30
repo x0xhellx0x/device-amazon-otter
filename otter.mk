@@ -96,19 +96,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.dataroaming=true \
 	ro.ril.hsxpa=1 \
 	ro.ril.gprsclass=10 \
-	ro.ril.disable.power.collapse=1 \
-	ro.config.notification_sound=OnTheHunt.ogg \
-	ro.config.alarm_alert=Alarm_Classic.ogg \
-	ro.opengles.version=131072 \
+	ro.config.notification_sound=ro.config.alarm_alert=Alarm_Classic.ogg \
 	net.bt.name=Android \
-	dalvik.vm.heapsize=64m \
-	dalvik.vm.stack-trace-file=/data/anr/traces.txt \
-	wifi.interface=tiwlan0 \
-	wifi.supplicant_scan_interval = 90 \
-	ro.sf.hwrotation=270 \
-	ro.sf.lcd_density=160 \
-	pm.sleep_mode=2 \
-	persist.lab126.chargeprotect=1
+	dalvik.vm.stack-trace-file=/data/anr/traces.txt
 
 $(call inherit-product, build/target/product/full_base.mk)
 
