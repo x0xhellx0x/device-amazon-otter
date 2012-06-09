@@ -22,12 +22,6 @@
     <array name="shutdown_reboot_options">
         <item>Reboot</item>
         <item>Recovery</item>
-<!--
-** Unless the TWRP team puts a setting in their recovery to reset the
-** bootmode back to 4000 the KF will always get stuck in a recovery loop
-** while running TWRP. For those who are running CWM (by DoomLord) this
-** is not a concern, so have 2 branches for now.
--->  
     </array>
 
     <!-- Do not translate. Defines the shutdown actions passed to the kernel.
