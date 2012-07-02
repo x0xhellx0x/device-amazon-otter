@@ -17,8 +17,13 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 BOARD_USES_GENERIC_AUDIO := false
-USE_CAMERA_STUB := true
 BOARD_HAVE_BLUETOOTH := false
+
+
+# Camera
+USE_CAMERA_STUB := true
+OMAP_ENHANCEMENT_CPCAM := true
+
 
 # Use the non-open-source parts, if they're present
 -include vendor/amazon/otter/BoardConfigVendor.mk

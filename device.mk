@@ -29,14 +29,14 @@ endif
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+#    parse_hdmi_edid \
+#    libedid \
+#    hwcomposer.default \
+
 # Hardware HALs
 PRODUCT_PACKAGES += \
     lights.otter \
     libinvensense_mpl \
-    hwcomposer.default \
-    parse_hdmi_edid \
-    libedid \
-    hwcomposer.otter \
     audio.primary.omap4430 \
     audio_policy.default \
     libaudioutils \
@@ -134,10 +134,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 # Kernel Modules are now built dyanamically using the CM build system
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
-#PRODUCT_COPY_FILES += $(shell \
-#    find device/amazon/otter/modules -name '*.ko' \
-#    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
-#    | tr '\n' ' ')
+PRODUCT_COPY_FILES += $(shell \
+    find device/amazon/otter/modules -name '*.ko' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
+    | tr '\n' ' ')
 
 
 $(call inherit-product-if-exists, vendor/amazon/otter/otter-vendor.mk)
