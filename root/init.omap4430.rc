@@ -20,8 +20,8 @@ on init
     write /sys/kernel/debug/pm_debug/smartreflex/sr_mpu/autocomp 1
 
 # Enable PVR modules
-    insmod /modules/pvrsrvkm_sgx540_120.ko
-    insmod /modules/omaplfb_sgx540_120.ko
+    insmod /pvrsrvkm_sgx540_120.ko
+    insmod /omaplfb_sgx540_120.ko
 
 on fs
     log "==  init.omap4430.rc: on fs ------------------------"
