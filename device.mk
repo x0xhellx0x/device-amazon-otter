@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
     busybox \
     su \
 
+# fixmac
+PRODUCT_COPY_FILES += \
+    device/amazon/otter/prebuilt/etc/init.d/01fixmac:system/etc/init.d/01fixmac \
+
 # Apps
 PRODUCT_PACKAGES += \
     OtterParts \
