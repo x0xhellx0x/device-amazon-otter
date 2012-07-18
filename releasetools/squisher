@@ -67,6 +67,8 @@ mv $REPACK/ota/system/lib/hw/camera.omap4.so $REPACK/ota/system/lib/hw/camera.om
 
 # Remove unwanted apps
 rm $REPACK/ota/system/app/Camera.apk
+rm $REPACK/ota/system/app/Development.apk
+rm $REPACK/ota/system/app/RomManager.apk
 
 # Fix build.prop
 $SED -i \
