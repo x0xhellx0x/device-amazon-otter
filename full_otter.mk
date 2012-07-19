@@ -28,3 +28,7 @@ PRODUCT_NAME := full_otter
 PRODUCT_DEVICE := otter
 PRODUCT_BRAND := Amazon
 PRODUCT_MODEL := Amazon Kindle Fire
+
+# Some tweaks
+$(call inherit-product, device/amazon/otter/otter_tweaks.mk)
+
