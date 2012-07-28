@@ -1,6 +1,4 @@
 ro.cwm.forbid_format = /bootloader,/dfs,/backup,/splash
 
-# Disable debugging notify icon on statusbar
-persist.adb.notify=0
 # Enable USB mass storage by default
 persist.sys.usb.config=mass_storage,adb
